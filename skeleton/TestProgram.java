@@ -1,6 +1,6 @@
 /**
  * Skeleton for main
- * tests Class Person, StreetAddress and ContactList
+ * tests Class Person, StreetAddress and ContactList //test
  * 
  * @version Draft-1 Mar 2 2017
  * @author Quang Phan
