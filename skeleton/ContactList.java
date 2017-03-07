@@ -1,6 +1,6 @@
 
 /**
- * Skeleton for Class ContactList
+ * Definition for Class ContactList
  * Each object of this class stores a
  * contact list
  * 
@@ -9,7 +9,8 @@
  */
 public class ContactList {
 //data members
-	Person[] contactList;
+	private Person[] contactList;
+	private int counter;
 	
 //--------------
 // Constructor
@@ -25,8 +26,8 @@ public class ContactList {
 // Public Instance Methods
 //--------------------------
 	/**
-	 * adds a new person into
-	 * the contact list
+	 * adds a new person into the contact list
+	 * and add 1 to "counter"
 	 */
 	public void add() {
 		//If name is blank, the person will not

@@ -1,6 +1,6 @@
 
 /**
- * Skeleton for Class StreetAddres.
+ * Definition for Class StreetAddres.
  * Each object of this class 
  * stores a contact address
  * 

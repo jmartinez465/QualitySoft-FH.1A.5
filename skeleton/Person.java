@@ -1,6 +1,6 @@
 
 /**
- * Skeleton for Class Person
+ * Definition for Class Person
  * An object of this class stores
  * contact information for 1 individual
  * 
