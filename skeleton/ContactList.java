@@ -4,7 +4,7 @@
  * Each object of this class stores a
  * contact list
  * 
- * @version Draft-1 Mar 2 2017
+ * @version Draft-3 Mar 9 2017
  * @author Quang Phan
  */
 public class ContactList {
@@ -52,4 +52,5 @@ public class ContactList {
 		//If more than one is found, print all
 		System.out.println("search was called");
 	}
+	
 }

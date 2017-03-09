@@ -4,10 +4,10 @@
  * An object of this class stores
  * contact information for 1 individual
  * 
- * @version Draft-1 Mar 2 2017
+ * @version Draft-3 Mar 9 2017
  * @author Quang Phan
  */
-public class Person {
+public class Person implements Comparable<Person> {
 //Data Members
 	private String firstName, lastName, emailAddress,
 				   phoneNumber, notes;
@@ -15,6 +15,18 @@ public class Person {
 //--------------------------
 // Public Instance Methods
 //--------------------------
+	/**
+	 * compares two Person object by comparing
+	 * their name alphabetically
+	 * @param Person object to compare
+	 * @return  1 if this >  other
+	 * 		   -1 if this <  other
+	 * 			0 if this == other
+	 */
+	public int compareTo(Person other) {
+		return 0;
+	}
+	
 	/**
 	 * sets address for contact
 	 */
@@ -62,7 +74,9 @@ public class Person {
 	 * @return a string containing all 
 	 * 		   the contact's information
 	 */
-	public String getContact() {
+	public String toString() {
 		return 	"contact information";
 	}
+
+
 }

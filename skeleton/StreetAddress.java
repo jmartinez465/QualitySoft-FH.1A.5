@@ -4,7 +4,7 @@
  * Each object of this class 
  * stores a contact address
  * 
- * @version Draft-1 Mar 2 2017
+ * @version Draft-3 Mar 9 2017
  * @author Quang Phan
  */
 public class StreetAddress {
@@ -56,7 +56,7 @@ public class StreetAddress {
 	/**
 	 * returns a String containing all the address info.
 	 */
-	public String getAddress() {							
+	public String toString() {							
 		return "address";
 	}
 }
