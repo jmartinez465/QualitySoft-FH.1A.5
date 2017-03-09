@@ -26,31 +26,13 @@ public class ContactList {
 // Public Instance Methods
 //--------------------------
 	/**
-	 * adds a new person into the contact list
+	 * adds a new "Person" object into the contact list
 	 * and add 1 to "counter"
 	 */
 	public void add() {
 		//If name is blank, the person will not
 		//be entered into the list
 		System.out.println("add was called");
-	}
-	
-	/**
-	 * quits the Contact List Program
-	 * and saves to disk
-	 */
-	public void exit() {
-		System.out.println("quit was called");
-	}
-	
-	/**
-	 * starts the Contact List Program
-	 * and opens the existing data file on disk
-	 * if there's no contact list data file,
-	 * system starts with an empty list
-	 */
-	public void open() {
-		System.out.println("start was called");
 	}
 	
 	/**

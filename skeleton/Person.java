@@ -18,7 +18,7 @@ public class Person {
 	/**
 	 * sets address for contact
 	 */
-	public void setAddress() {
+	public void setAddress(StreetAddress newAddress) {
 		System.out.println("setAddress was called");
 	}	
 	
