@@ -4,7 +4,7 @@
  * Each object of this class stores a
  * contact list
  * 
- * @version Draft-3 Mar 9 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
 public class ContactList {
@@ -26,7 +26,7 @@ public class ContactList {
 // Public Instance Methods
 //--------------------------
 	/**
-	 * adds a new "Person" object into the contact list
+	 * adds a new "Person" object into "contactList"
 	 * and add 1 to "counter"
 	 */
 	public void add() {

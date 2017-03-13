@@ -4,7 +4,7 @@
  * An object of this class stores
  * contact information for 1 individual
  * 
- * @version Draft-3 Mar 9 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
 public class Person implements Comparable<Person> {
@@ -30,8 +30,8 @@ public class Person implements Comparable<Person> {
 	/**
 	 * sets address for contact
 	 */
-	public void setAddress(StreetAddress newAddress) {
-		System.out.println("setAddress was called");
+	public void readAddress() {
+		System.out.println("readAddress was called");
 	}	
 	
 	/**

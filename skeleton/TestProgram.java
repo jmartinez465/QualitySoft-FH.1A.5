@@ -1,7 +1,7 @@
 /**
  * tests Class Person, StreetAddress and ContactList
  * 
- * @version Draft-3 Mar 9 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
 public class TestProgram {
@@ -24,7 +24,7 @@ public class TestProgram {
 		Person contact = new Person();
 		Person test = new Person();
 		System.out.println(contact.compareTo(test));
-		contact.setAddress(address);
+		contact.readAddress();
 		contact.setEmail("");
 		contact.setFirstName("");
 		contact.setLastName("");
@@ -43,6 +43,7 @@ public class TestProgram {
 	public static void read() {
 		System.out.println("read was called");
 	}
+	
 }
 
 
@@ -59,7 +60,7 @@ setState was called
 setZip was called
 address
 0
-setAddress was called
+readAddress was called
 setEmail was called
 setFirstName was called
 setLastName was called

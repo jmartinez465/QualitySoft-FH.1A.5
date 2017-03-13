@@ -4,7 +4,7 @@
  * Each object of this class 
  * stores a contact address
  * 
- * @version Draft-3 Mar 9 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
 public class StreetAddress {
