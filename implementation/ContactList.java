@@ -50,7 +50,7 @@ public class ContactList {
 		
 		System.out.println("Please press enter after each input.");
 		System.out.print("Last name: ");
-		String tempName = console.next();
+		String tempName = console.nextLine();
 		
 		//check if user enters a blank last name:
 		if (!tempName.trim().isEmpty()) { 
