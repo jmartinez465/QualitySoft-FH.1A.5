@@ -5,7 +5,7 @@ import java.util.Scanner;
  * An object of this class stores
  * contact information for 1 individual
  * 
- * @version 1 Mar 15 2017
+ * @version 2 Mar 16 2017
  * @author Quang Phan
  */
 public class Person implements Comparable<Person> {
@@ -43,15 +43,15 @@ public class Person implements Comparable<Person> {
 		
 		System.out.println("Address: ");
 		System.out.print("\tHouse/Apartment: ");
-		address.setHouse(console.next().trim());
+		address.setHouse(console.nextLine().trim());
 		System.out.print("\tCity: ");
-		address.setCity(console.next().trim());
+		address.setCity(console.nextLine().trim());
 		System.out.print("\tState: ");
-		address.setState(console.next().trim());
+		address.setState(console.nextLine().trim());
 		System.out.print("\tZip code: ");
-		address.setZip(console.next().trim());
+		address.setZip(console.nextLine().trim());
 		System.out.print("\tCountry: ");
-		address.setCountry(console.next().trim());
+		address.setCountry(console.nextLine().trim());
 	}	
 	
 	/**
