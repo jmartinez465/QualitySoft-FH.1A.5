@@ -3,7 +3,7 @@
  * Each object of this class stores a
  * contact list
  * 
- * @version 1 Mar 15 2017
+ * @version 2 Mar 16 2017
  * @author Quang Phan
  */
 
@@ -50,7 +50,7 @@ public class ContactList {
 		
 		System.out.println("Please press enter after each input.");
 		System.out.print("Last name: ");
-		String tempName = console.next();
+		String tempName = console.nextLine();
 		
 		//check if user enters a blank last name:
 		if (!tempName.trim().isEmpty()) { 
@@ -61,16 +61,16 @@ public class ContactList {
 		}
 		
 		System.out.print("First name: ");
-		contactList[counter].setFirstName(console.next().trim());
+		contactList[counter].setFirstName(console.nextLine().trim());
 
 		contactList[counter].readAddress();
 		
 		System.out.print("Email address: ");
-		contactList[counter].setEmail(console.next().trim());
+		contactList[counter].setEmail(console.nextLine().trim());
 		System.out.print("Phone number: ");
-		contactList[counter].setPhone(console.next().trim());
+		contactList[counter].setPhone(console.nextLine().trim());
 		System.out.print("Notes: ");
-		contactList[counter].setNotes(console.next().trim());
+		contactList[counter].setNotes(console.nextLine().trim());
 		
 		System.out.println("New contact added!");
 		counter++;
