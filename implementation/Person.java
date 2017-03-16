@@ -10,8 +10,11 @@ import java.util.Scanner;
  */
 public class Person implements Comparable<Person> {
 //Data Members
-	private String firstName, lastName, emailAddress,
-				   phoneNumber, notes;
+	private String firstName;
+	private String lastName;
+	private String emailAddress;
+	private String phoneNumber;
+	private String notes;
 	private StreetAddress address;
 //--------------------------
 // Public Instance Methods
