@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Definition for Class Person
  * An object of this class stores
@@ -8,6 +6,8 @@ import java.util.Scanner;
  * @version 2 Mar 16 2017
  * @author Quang Phan
  */
+import java.util.Scanner;
+
 public class Person implements Comparable<Person> {
 //Data Members
 	private String firstName;

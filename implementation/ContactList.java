@@ -98,10 +98,8 @@ public class ContactList {
 					+ "\n----------------------------\n";
 		}
 		
-		allInformation = allInformation
-					+ "Number of contacts: " + counter;
-		return allInformation 
-				+ "\n===============================\n";
+		allInformation = allInformation	+ "Number of contacts: " + counter;
+		return allInformation + "\n===============================\n";
 	}
 	
 }

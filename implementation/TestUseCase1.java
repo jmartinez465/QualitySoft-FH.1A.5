@@ -1,11 +1,9 @@
 /**
  * tests Class Person, StreetAddress and ContactList
- * for Use Case 1
+ * for Use Case 1 (add contacts to Contact list)
  * @version 1 Mar 16 2017
  * @author Quang Phan
  */
-
-import java.util.Scanner;
 
 public class TestUseCase1 {
 	private static final int MAX_CONTACT = 100;	
@@ -19,26 +17,7 @@ public class TestUseCase1 {
 		}
 	}
 	
-	
-	/**
-	 * reads the saved file into the contact list
-	 * display a message if no contact is found
-	 */
-	public static void read() {
-		//more code needed for reading file.
-	}
-	
-	/**
-	 * saves "contactBook to disk" and sets
-	 * "restart" to false (to quit the program)
-	 */
-	public static void quit() {
-		//more code needed for saving file.
-	}
-	
 }
-
-
 
 /*RUN
 Please press enter after each input.
