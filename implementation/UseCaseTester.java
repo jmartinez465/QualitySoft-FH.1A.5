@@ -5,7 +5,7 @@
  * @author Quang Phan
  */
 
-public class TestUseCase1 {
+public class UseCaseTester {
 	private static final int MAX_CONTACT = 100;	
 	private static ContactList contactBook = new ContactList(MAX_CONTACT);
 	
