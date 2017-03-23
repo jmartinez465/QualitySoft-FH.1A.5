@@ -1,13 +1,12 @@
-import java.util.Scanner;
-
 /**
  * Definition for Class Person
  * An object of this class stores
  * contact information for 1 individual
  * 
- * @version 1 Mar 15 2017
+ * @version 3 Mar 21 2017
  * @author Quang Phan
  */
+
 public class Person implements Comparable<Person> {
 //Data Members
 	private String firstName;
@@ -38,23 +37,9 @@ public class Person implements Comparable<Person> {
 	 * calls methods from address of type StreetAddress
 	 * to reads in address information for contact
 	 */
-	public void readAddress() {
+	public void setAddress(StreetAddress newAddress) {
 		address = new StreetAddress();
-		
-		Scanner console = new Scanner(System.in);
-		console.useDelimiter(System.getProperty("line.separator"));
-		
-		System.out.println("Address: ");
-		System.out.print("\tHouse/Apartment: ");
-		address.setHouse(console.next().trim());
-		System.out.print("\tCity: ");
-		address.setCity(console.next().trim());
-		System.out.print("\tState: ");
-		address.setState(console.next().trim());
-		System.out.print("\tZip code: ");
-		address.setZip(console.next().trim());
-		System.out.print("\tCountry: ");
-		address.setCountry(console.next().trim());
+		address = newAddress;
 	}	
 	
 	/**
@@ -86,6 +71,41 @@ public class Person implements Comparable<Person> {
 	}
 	
 	/**
+	 * @return contact's first name
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+	
+
+	/**
+	 * @return contact's address as StreetAddress object
+	 */
+	public StreetAddress getAddress() {
+		return address;
+	}
+	/**
+	 * @return contact's email
+	 */
+	public String getEmail() {
+		return emailAddress;
+	}
+	
+	/**
+	 * @return contact's phone
+	 */
+	public String getPhone() {
+		return phoneNumber;
+	}
+	
+	/**
+	 * @return contact's notes
+	 */
+	public String getNotes() {
+		return notes;
+	}
+	
+	/**
 	 * compares two Person object by comparing
 	 * their name alphabetically
 	 * @param Person object to compare
@@ -94,8 +114,19 @@ public class Person implements Comparable<Person> {
 	 * 			0 if this == other
 	 */
 	public int compareTo(Person other) {
-		//code needed for String comparison
-		return 0;
+		if (this.lastName.compareToIgnoreCase(other.lastName) > 0) {
+			return 1;
+		} else if (this.lastName.compareToIgnoreCase(other.lastName) < 0) {
+			return -1;
+		} else {
+			if (this.firstName.compareToIgnoreCase(other.firstName) > 0) {
+				return 1;
+			} else if (this.firstName.compareToIgnoreCase(other.firstName) < 0) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
 	}
 
 	/**
@@ -109,5 +140,5 @@ public class Person implements Comparable<Person> {
 				+ "\n" + phoneNumber
 				+ "\n" + notes;
 	}
-
+	
 }

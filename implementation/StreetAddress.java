@@ -4,7 +4,7 @@
  * Each object of this class 
  * stores a contact address
  * 
- * @version 1 Mar 15 2017
+ * @version 3 Mar 21 2017
  * @author Quang Phan
  */
 public class StreetAddress {
@@ -53,6 +53,41 @@ public class StreetAddress {
 		country = newCountry;
 	}
 	
+	/**
+	 * @return house
+	 */
+	public String getHouse() {
+		return house;
+	}
+
+	/**
+	 * @return city
+	 */
+	public String getCity() {
+		return city;
+	}
+
+	/**
+	 * @return state
+	 */
+	public String getState() {
+		return state;
+	}
+
+	/**
+	 * @return zip
+	 */
+	public String getZip() {
+		return zip;
+	}
+
+	/**
+	 * @return country
+	 */
+	public String getCountry() {
+		return country;
+	}
+
 	/**
 	 * returns a String containing all the address info.
 	 */
