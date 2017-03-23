@@ -1,15 +1,16 @@
 /**
- * full skeleton for all use cases
- * @version 2 Mar 16 2017
+ * manages the contact list
+ * @version 3 Mar 21 2017
  * @author Quang Phan
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ContactManager {
 	private static boolean restart = true;
 	private static final int MAX_CONTACT = 100;	
-	private static ContactList contactBook = new ContactList(MAX_CONTACT);
+	private static ContactList contactList = new ContactList(MAX_CONTACT);
 	
 	public static void main(String[] args) {		
 		read();
@@ -22,7 +23,7 @@ public class ContactManager {
 	
 	
 	/**
-	 * reads the saved file into "contactBook"
+	 * reads the saved file into "contactList"
 	 * and display a message
 	 */
 	public static void read() {
@@ -34,7 +35,7 @@ public class ContactManager {
 	 */
 	public static void printMenu() {
 		System.out.println("Greetings!");
-		System.out.println(contactBook.getCounter() 
+		System.out.println(contactList.getContactCounter() 
 							+ " contact(s) found.");
 		System.out.println("What would you like to do?");
 		System.out.println("[1] Add a contact");
@@ -59,7 +60,7 @@ public class ContactManager {
 					addContact();
 					break;
 				case "2": 
-					printContacts();
+					printContacts();					
 					break;	
 				case "3":
 					searchContacts();
@@ -70,7 +71,7 @@ public class ContactManager {
 				default: 
 					inputAgain = true;
 					System.err.println("Wrong input. "
-									+ "Please input only 1 or 2");
+									+ "Please input only 1 to 4");
 			}
 		} while (inputAgain);
 	}
@@ -80,21 +81,33 @@ public class ContactManager {
 	 */
 	public static void addContact() {
 		System.out.println("===============================");
-		contactBook.add();
-		System.out.println("========LIST OF CONTACT========");
-		System.out.println(contactBook.toString());
+		contactList.addContact();
 	}
 	
 	/**
-	 * prints all the contacts in "contactBook"
+	 * prints all the contacts in "contactList"
 	 */
 	public static void printContacts() {
-		//Use Case 2
-		//code needed for printing
+		contactList.sort();
+		
+		Table.printTop();
+		
+		int numberOfContacts = contactList.getContactCounter();
+		
+		for (int index = 0; index < numberOfContacts; index++) {
+			Table contactToPrint = new Table(contactList.getContact(index), index);
+			contactToPrint.printContact();
+			if (index < numberOfContacts - 1) {
+				Table.printSeparator();
+			} else {
+				Table.printBottom();
+			}
+		}
+		
 	}
 	
 	/**
-	 * searches contacts in "contactBook" by lastName
+	 * searches contacts in "contactList" by lastName
 	 */
 	public static void searchContacts() {
 		//Use Case 3
@@ -102,7 +115,7 @@ public class ContactManager {
 	}
 	
 	/**
-	 * saves "contactBook" to disk and sets
+	 * saves "contactList" to disk and sets
 	 */
 	public static void save() {
 		//Use Case 4

@@ -2,8 +2,9 @@
  * Each object of this class contains 1 contact
  * information and the methods needed to print those
  * information into a table
+ * 
+ * @version 3 Mar 21 2017
  * @author Quang Phan
- *
  */
 
 public class Table {
@@ -28,7 +29,6 @@ public class Table {
 // Constructor
 //--------------	
 	public Table(Person contact, int contactIndex) {
-		lastName = new String[51];
 		lastName = convertToArray(contact.getLastName(), LAST_NAME_FIELD);
 		firstName = convertToArray(contact.getFirstName(), FIRST_NAME_FIELD);
 		email = convertToArray(contact.getEmail(), EMAIL_FIELD);
@@ -38,9 +38,9 @@ public class Table {
 		index = convertToArray(Integer.toString(contactIndex + 1), INDEX_FIELD);
 	}
 
-//--------------------------
-//Class Methods
-//--------------------------
+//----------------------
+//Public Class Methods
+//----------------------
 	/**
 	 * prints out the top of contact list
 	 */
@@ -71,6 +71,42 @@ public class Table {
 		printSeparator();
 	}
 	
+
+	/**
+	 * prints a line separate each contact
+	 */
+	public static void printSeparator() {
+		System.out.print("|");
+		System.out.print(categoryLine(INDEX_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(LAST_NAME_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(FIRST_NAME_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(ADDRESS_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(EMAIL_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(PHONE_FIELD));
+		System.out.print("|");
+		System.out.print(categoryLine(NOTES_FIELD));
+		System.out.print("|");
+		System.out.println();;
+	}
+	
+	/**
+	 * prints the bottom line for the table
+	 */
+	public static void printBottom() {
+		for (int count = 1; count <= LINE_LENGTH; count++) {
+			System.out.print("-");
+		}
+		System.out.println();
+	}	
+	
+//----------------------
+//Private Class Methods
+//----------------------	
 	/**
 	 * prints all the category tops
 	 */
@@ -110,28 +146,6 @@ public class Table {
 	}
 
 	/**
-	 * prints a line separate each contact
-	 */
-	public static void printSeparator() {
-		System.out.print("|");
-		System.out.print(categoryLine(INDEX_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(LAST_NAME_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(FIRST_NAME_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(ADDRESS_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(EMAIL_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(PHONE_FIELD));
-		System.out.print("|");
-		System.out.print(categoryLine(NOTES_FIELD));
-		System.out.print("|");
-		System.out.println();;
-	}
-
-	/**
  	* @param field of the category
  	* @return a line used to separate the top category
  	* 			to the actual contact information
@@ -142,16 +156,6 @@ public class Table {
 			emptySpace = emptySpace + "-";
 		}
 		return emptySpace;
-	}
-
-	/**
-	 * prints the bottom line for the table
-	 */
-	public static void printBottom() {
-		for (int count = 1; count <= LINE_LENGTH; count++) {
-			System.out.print("-");
-		}
-		System.out.println();
 	}
 
 //--------------------------
@@ -190,9 +194,13 @@ public class Table {
 
 		numberOfLines = 
 					(int)Math.ceil((double)stringToConvert.length() / field);
+		//if the string is empty, returns a 1-line string with all whitespaces
+		if (numberOfLines == 0) {
+			numberOfLines = 1;
+		}
 		
 		String[] array = new String[numberOfLines];
-		
+
 		for (int index = 0; index < numberOfLines - 1; index++) {
 			array[index] = 
 					stringToConvert.substring(index*field, (index+1)*field);
@@ -212,13 +220,18 @@ public class Table {
 	 */
 	private String[] addressAsString(Person contact) {
 		StreetAddress rawAddress = contact.getAddress();
+		//if address was left blank, returns an 1-line empty string
+		if(rawAddress.toString().trim().isEmpty()) {
+			address = new String[1];
+			address[0] = "";
+			return address;
+		}
 		String[] house = convertToArray(rawAddress.getHouse(), ADDRESS_FIELD);
+
 		address = new String[house.length + 3];
-		
 		for (int index = 0; index < house.length; index++) {
 			address[index] = house[index];
 		}
-
 		address[house.length] = rawAddress.getCity();
 		address[house.length + 1] = 
 						rawAddress.getState() + " " + rawAddress.getZip();
