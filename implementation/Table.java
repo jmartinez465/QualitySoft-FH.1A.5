@@ -232,8 +232,10 @@ public class Table {
 		for (int index = 0; index < house.length; index++) {
 			address[index] = house[index];
 		}
-		address[house.length] = rawAddress.getCity() + ", " + rawAddress.getState();
-		address[house.length + 1] = rawAddress.getZip() + " " + rawAddress.getCountry();
+		address[house.length] = rawAddress.getCity() 
+								+ ", " + rawAddress.getState();
+		address[house.length + 1] = rawAddress.getZip() 
+								+ " " + rawAddress.getCountry();
 
 		return address;
 	}

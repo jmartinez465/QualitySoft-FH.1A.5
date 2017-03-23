@@ -62,108 +62,116 @@ public class ContactList {
 		System.out.println("Please press enter after each input, or "
 							+ "input only 'c' to cancel.");
 		System.out.print("Last name: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
-		} else if (tempName.isEmpty()) { //terminates if last name is blank
+		} else if (stringInput.isEmpty()) { //terminates if last name is blank
 			System.err.println("Last name is required. No contact added!");
 			return;
 		} else {
-			tempPerson.setLastName(tempName);
+			tempPerson.setLastName(stringInput);
 		}
 		
 		System.out.print("First name: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
-		} else if (tempName.isEmpty()) { //terminates if first name is blank
+		} else if (stringInput.isEmpty()) { //terminates if first name is blank
 			System.err.println("First name is required. No contact added!");
 			return;
 		} else {
-			tempPerson.setLastName(tempName);
+			tempPerson.setLastName(stringInput);
 		}
 		
 		
 		StreetAddress address = new StreetAddress();
 		System.out.println("Address: ");
 		System.out.print("\tHouse/Apartment: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			address.setHouse(tempName);
+			address.setHouse(stringInput);
 		}
 		
 		System.out.print("\tCity: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			address.setCity(tempName);
+			address.setCity(stringInput);
 		}
 		
 		System.out.print("\tState: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			address.setState(tempName);
+			address.setState(stringInput);
 		}
 		
 		System.out.print("\tZip code: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			address.setZip(tempName);
+			address.setZip(stringInput);
 		}
 		
 		System.out.print("\tCountry: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			address.setCountry(tempName);
+			address.setCountry(stringInput);
 			tempPerson.setAddress(address);
 		}
 			
 		System.out.print("Email address: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			tempPerson.setEmail(tempName);
+			tempPerson.setEmail(stringInput);
 		}
 		
 		System.out.print("Phone number(XXX XXX XXXX): ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			tempPerson.setPhone(tempName);
+			tempPerson.setPhone(stringInput);
 		}
 	
 		System.out.print("Notes: ");
-		tempName = console.nextLine().trim();
-		if (isCancelled(tempName)) { //terminates if user enters "c"
+		stringInput = console.nextLine().trim();
+		if (isCancelled(stringInput)) { //terminates if user enters "c"
 			System.out.println("No contact added.");
 			return;
 		} else {
-			tempPerson.setNotes(tempName);
+			tempPerson.setNotes(stringInput);
 		}
 		
 		contactList[contactCounter] = tempPerson;
 		System.out.println("New contact added!");
 		contactCounter++;
+	}
+	
+	private boolean isCancelled(String stringInput) {
+		if (stringInput.equalsIgnoreCase("c")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
