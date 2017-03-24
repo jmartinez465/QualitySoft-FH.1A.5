@@ -1,27 +1,17 @@
 /**
- * Skeleton for main
  * tests Class Person, StreetAddress and ContactList
  * 
- * @version Draft-1 Mar 2 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
 public class TestProgram {
 	public static void main(String[] args) {
+		read();
+		
 		ContactList list = new ContactList(5);
-		list.open();
 		list.add();
 		list.printList();
 		list.search("");
-		list.exit();
-		
-		Person contact = new Person();
-		contact.setAddress();
-		contact.setEmail("");
-		contact.setFirstName("");
-		contact.setLastName("");
-		contact.setNotes("");
-		contact.setPhone("");
-		System.out.println(contact.getContact());
 		
 		StreetAddress address = new StreetAddress();
 		address.setCity("");
@@ -29,29 +19,52 @@ public class TestProgram {
 		address.setHouse("");
 		address.setState("");
 		address.setZip("");
-		System.out.println(address.getAddress());
+		System.out.println(address.toString());
 		
+		Person contact = new Person();
+		Person test = new Person();
+		System.out.println(contact.compareTo(test));
+		contact.readAddress();
+		contact.setEmail("");
+		contact.setFirstName("");
+		contact.setLastName("");
+		contact.setNotes("");
+		contact.setPhone("");
+		System.out.println(contact.toString());
+		
+		
+	}
+	
+	
+	/**
+	 * reads the saved file into the contact list
+	 * display a message if no saved file is found
+	 */
+	public static void read() {
+		System.out.println("read was called");
 	}
 	
 }
 
+
+
 /*RUN
-start was called
+read was called
 add was called
 printList was called
 search was called
-quit was called
-setAddress was called
-setEmail was called
-setFirstName was called
-setLastName was called
-setNotes was called
-setPhone was called
-contact information
 setCity was called
 setCountry was called
 setHouse was called
 setState was called
 setZip was called
 address
+0
+readAddress was called
+setEmail was called
+setFirstName was called
+setLastName was called
+setNotes was called
+setPhone was called
+contact information
 */

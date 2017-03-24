@@ -1,13 +1,13 @@
 
 /**
- * Skeleton for Class Person
+ * Definition for Class Person
  * An object of this class stores
  * contact information for 1 individual
  * 
- * @version Draft-1 Mar 2 2017
+ * @version Draft-4 Mar 13 2017
  * @author Quang Phan
  */
-public class Person {
+public class Person implements Comparable<Person> {
 //Data Members
 	private String firstName, lastName, emailAddress,
 				   phoneNumber, notes;
@@ -16,10 +16,22 @@ public class Person {
 // Public Instance Methods
 //--------------------------
 	/**
+	 * compares two Person object by comparing
+	 * their name alphabetically
+	 * @param Person object to compare
+	 * @return  1 if this >  other
+	 * 		   -1 if this <  other
+	 * 			0 if this == other
+	 */
+	public int compareTo(Person other) {
+		return 0;
+	}
+	
+	/**
 	 * sets address for contact
 	 */
-	public void setAddress() {
-		System.out.println("setAddress was called");
+	public void readAddress() {
+		System.out.println("readAddress was called");
 	}	
 	
 	/**
@@ -62,7 +74,9 @@ public class Person {
 	 * @return a string containing all 
 	 * 		   the contact's information
 	 */
-	public String getContact() {
+	public String toString() {
 		return 	"contact information";
 	}
+
+
 }

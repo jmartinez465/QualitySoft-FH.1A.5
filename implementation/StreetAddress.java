@@ -4,7 +4,7 @@
  * Each object of this class 
  * stores a contact address
  * 
- * @version Draft-4 Mar 13 2017
+ * @version 3 Mar 21 2017
  * @author Quang Phan
  */
 public class StreetAddress {
@@ -14,7 +14,7 @@ public class StreetAddress {
 	private String state;
 	private String zip;
 	private String country;
-		
+
 //--------------------------
 // Public Instance Methods
 //--------------------------
@@ -22,41 +22,77 @@ public class StreetAddress {
 	 * sets the value for house to "newHouse"
 	 */
 	public void setHouse(String newHouse) {	
-		System.out.println("setHouse was called");
+		house = newHouse;
 	}
 	
 	/**
 	 * sets the value for city to "newCity"
 	 */
 	public void setCity(String newCity) {
-		System.out.println("setCity was called");
+		city = newCity;
 	}
 	
 	/**
 	 * sets the value for state to "newState"
 	 */
 	public void setState(String newState) {
-		System.out.println("setState was called");
+		state = newState;
 	}
 	
 	/**
 	 * sets the value for zip to "newZip"
 	 */
 	public void setZip(String newZip) {
-		System.out.println("setZip was called");
+		zip = newZip;
 	}
 	
 	/**
 	 * sets the value for country to "newCountry
 	 */
 	public void setCountry(String newCountry) {
-		System.out.println("setCountry was called");
+		country = newCountry;
 	}
 	
+	/**
+	 * @return house
+	 */
+	public String getHouse() {
+		return house;
+	}
+
+	/**
+	 * @return city
+	 */
+	public String getCity() {
+		return city;
+	}
+
+	/**
+	 * @return state
+	 */
+	public String getState() {
+		return state;
+	}
+
+	/**
+	 * @return zip
+	 */
+	public String getZip() {
+		return zip;
+	}
+
+	/**
+	 * @return country
+	 */
+	public String getCountry() {
+		return country;
+	}
+
 	/**
 	 * returns a String containing all the address info.
 	 */
 	public String toString() {							
-		return "address";
+		return house + " " + city + " " + state
+				+ " " + zip + " " + country;
 	}
 }
