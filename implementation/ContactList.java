@@ -70,7 +70,7 @@ public class ContactList {
 			System.err.println("Last name is required. No contact added!");
 			return;
 		} else {
-			tempPerson.setFirstName(stringInput);
+			tempPerson.setLastName(stringInput);
 		}
 		
 		System.out.print("First name: ");
@@ -82,7 +82,7 @@ public class ContactList {
 			System.err.println("First name is required. No contact added!");
 			return;
 		} else {
-			tempPerson.setLastName(stringInput);
+			tempPerson.setFirstName(stringInput);
 		}
 		
 		

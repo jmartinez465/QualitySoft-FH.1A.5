@@ -14,4 +14,6 @@ Tutorial on Github
 2. Youtube: https://www.youtube.com/playlist?list=PLwAKR305CRO-fenwcN2-IC0rgaB6vaJgD
 
 3. Others:https://help.github.com/articles/adding-a-file-to-a-repository-using-the-command-line/
+
+          https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork
                      

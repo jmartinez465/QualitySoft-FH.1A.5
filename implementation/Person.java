@@ -109,23 +109,15 @@ public class Person implements Comparable<Person> {
 	 * compares two Person object by comparing
 	 * their name alphabetically
 	 * @param Person object to compare
-	 * @return  1 if this >  other
-	 * 		   -1 if this <  other
+	 * @return  a positive integer if this >  other
+	 * 		   	a negative integer if this <  other
 	 * 			0 if this == other
 	 */
 	public int compareTo(Person other) {
-		if (this.lastName.compareToIgnoreCase(other.lastName) > 0) {
-			return 1;
-		} else if (this.lastName.compareToIgnoreCase(other.lastName) < 0) {
-			return -1;
+		if (this.lastName.compareToIgnoreCase(other.lastName) == 0) {
+			return this.firstName.compareToIgnoreCase(other.firstName);
 		} else {
-			if (this.firstName.compareToIgnoreCase(other.firstName) > 0) {
-				return 1;
-			} else if (this.firstName.compareToIgnoreCase(other.firstName) < 0) {
-				return -1;
-			} else {
-				return 0;
-			}
+			return this.lastName.compareToIgnoreCase(other.lastName);
 		}
 	}
 
